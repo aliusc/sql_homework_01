@@ -9,8 +9,8 @@ CREATE TABLE `book_author` (
 	PRIMARY KEY (`bookAuthorId`),
 	UNIQUE INDEX `Index 2` (`authorId`, `bookId`),
 	INDEX `FK_book_author_books` (`bookId`),
-	CONSTRAINT `FK_book_author_authors` FOREIGN KEY (`authorId`) REFERENCES `authors` (`authorId`) ON UPDATE NO ACTION ON DELETE NO ACTION,
-	CONSTRAINT `FK_book_author_books` FOREIGN KEY (`bookId`) REFERENCES `books` (`bookId`) ON UPDATE NO ACTION ON DELETE NO ACTION
+	CONSTRAINT `FK_book_author_authors` FOREIGN KEY (`authorId`) REFERENCES `authors` (`authorId`) ON UPDATE NO ACTION ON DELETE CASCADE,
+	CONSTRAINT `FK_book_author_books` FOREIGN KEY (`bookId`) REFERENCES `books` (`bookId`) ON UPDATE NO ACTION ON DELETE CASCADE
 )
 COLLATE='utf8_general_ci'
 ENGINE=InnoDB
