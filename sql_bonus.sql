@@ -30,4 +30,5 @@ INNER JOIN (
 	GROUP BY comments.newsId
 ) AS last_news_comment ON news.newsId = last_news_comment.newsId 
 INNER JOIN comments ON comments.newsId=last_news_comment.newsId AND comments.date=last_news_comment.last_comment_date
-ORDER BY comments.date DESC
+ORDER BY news.date DESC
+LIMIT 10;
